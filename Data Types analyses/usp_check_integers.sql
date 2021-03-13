@@ -1,6 +1,20 @@
+/*
+Copyright 2021 Reitse Eskens
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, 
+including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, 
+subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, 
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
+
 create or alter procedure dbo.usp_check_integers (
 	@schema varchar(50) = 'dbo',
-	@table varchar(200) = null)
+	@table varchar(200) = NULL)
 
 as
 set nocount on
@@ -39,10 +53,10 @@ set @masterSQL =
 			else ct.name end + '''''' as typename, ''''''
 		+ c.name + '''''' as columnname, 
 		case 
-			when ISNULL(max('' + QUOTENAME(c.name) +''),0) >= 0 and  ISNULL(max('' + QUOTENAME(c.name) +''),0)  < 256 then ''''tinyint mogelijk''''
-			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 255 and ISNULL(max('' + QUOTENAME(c.name) +''),0)  < 32768 then ''''smallint mogelijk''''
-			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 32767 and ISNULL(max('' + QUOTENAME(c.name) +''),0) < 2147483648 then ''''int mogelijk''''
-			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 2147483647 and ISNULL(max('' + QUOTENAME(c.name) +''),0) < 9223372036854775808 then ''''bigint mogelijk''''
+			when ISNULL(max('' + QUOTENAME(c.name) +''),0) >= 0 and  ISNULL(max('' + QUOTENAME(c.name) +''),0)  < 256 then ''''tinyint maybe?''''
+			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 255 and ISNULL(max('' + QUOTENAME(c.name) +''),0)  < 32768 then ''''smallint maybe?''''
+			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 32767 and ISNULL(max('' + QUOTENAME(c.name) +''),0) < 2147483648 then ''''int maybe?''''
+			when ISNULL(max('' + QUOTENAME(c.name) +''),0) > 2147483647 and ISNULL(max('' + QUOTENAME(c.name) +''),0) < 9223372036854775808 then ''''bigint maybe?''''
 			else ''''go decimal, may the force be with you'''' end as advice,
 			case '''''' + ct.name + ''''''
 				when ''''tinyint'''' then 255 - ISNULL(max('' + QUOTENAME(c.name) +''),0) 
@@ -70,7 +84,7 @@ create table #querytext (query nvarchar(4000))
 create table #tempResults
 (
 	maxvalue decimal(38,0),
-	typename varchar(10),
+	typename varchar(20),
 	columnname varchar(100),
 	advice varchar(50),
 	[free range] decimal(38,0),
