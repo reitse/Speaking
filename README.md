@@ -6,3 +6,10 @@
  
  # sharing
  You might want to share. Make sure to leave to correct attributions.
+
+# Events
+- New stars of Data
+- Data Weekender (2.0)
+- Pass Community Summit
+- Axians Data Driven Live; Data literacy
+- Data TGIF
