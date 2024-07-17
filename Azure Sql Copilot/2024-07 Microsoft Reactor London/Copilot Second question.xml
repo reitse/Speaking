@@ -1,0 +1,81 @@
+<RingBufferTarget truncated="0" processingTime="0" totalEventsProcessed="6" eventCount="6" droppedCount="0" memoryUsed="18350">
+  <event name="sql_statement_starting" package="sqlserver" timestamp="2024-07-16T05:29:55.563Z">
+    <data name="state">
+      <type name="statement_starting_state" package="sqlserver"></type>
+      <value>0</value>
+      <text><![CDATA[Normal]]></text>
+    </data>
+    <data name="line_number">
+      <type name="int32" package="package0"></type>
+      <value>1</value>
+    </data>
+    <data name="offset">
+      <type name="int32" package="package0"></type>
+      <value>0</value>
+    </data>
+    <data name="offset_end">
+      <type name="int32" package="package0"></type>
+      <value>3056</value>
+    </data>
+    <data name="statement">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT CONCAT(QUOTENAME(schema_name(tab1.schema_id)), '.', QUOTENAME(tab1.name)) AS [table],
+                col1.name AS [column],
+                CONCAT(QUOTENAME(schema_name(tab2.schema_id)), '.', QUOTENAME(tab2.name)) AS [referenced_table],
+                col2.name AS [referenced_column]
+            FROM sys.foreign_key_columns fkc
+                INNER JOIN sys.foreign_keys fk
+            ON fkc.constraint_object_id = fk.object_id
+                INNER JOIN sys.tables tab1
+                ON tab1.object_id = fkc.parent_object_id
+                INNER JOIN sys.columns col1
+                ON col1.column_id = fkc.parent_column_id AND col1.object_id = tab1.object_id
+                INNER JOIN sys.tables tab2
+                ON tab2.object_id = fkc.referenced_object_id
+                INNER JOIN sys.columns col2
+                ON col2.column_id = fkc.referenced_column_id AND col2.object_id = tab2.object_id
+            WHERE fk.is_disabled = 0
+              AND CONCAT(QUOTENAME(schema_name (tab1.schema_id))
+                , '.'
+                , QUOTENAME(tab1.name)) IN ('[dbo].[_TransactionIndex_31adb587-a9ae-4f15-839b-1bb9ac305049]','[dbo].[EmployeeHoliday]','[dbo].[EmployeeSalary]','[dbo].[pivottable]','[DIM].[CANCELLATION_CODE]','[DIM].[CARRIERS]','[DIM].[DATE]','[DIM].[EMPLOYEES]','[DIM].[LOCATION]','[DIM].[plane]','[STA].[AIRPORTS]','[STA].[CARRIERS]','[STA].[FLIGHTDATA]','[STA].[PLANEDATA]','[TMP].[AIRPORTS]','[TMP].[CARRIERS]','[TMP].[FLIGHTDATA]','[TMP].[LOADINGFAILURES]','[TMP].[PLANEDATA]')]]></value>
+    </data>
+    <action name="username" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[User_Name]]></value>
+    </action>
+    <action name="sql_text" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT CONCAT(QUOTENAME(schema_name(tab1.schema_id)), '.', QUOTENAME(tab1.name)) AS [table],
+                col1.name AS [column],
+                CONCAT(QUOTENAME(schema_name(tab2.schema_id)), '.', QUOTENAME(tab2.name)) AS [referenced_table],
+                col2.name AS [referenced_column]
+            FROM sys.foreign_key_columns fkc
+                INNER JOIN sys.foreign_keys fk
+            ON fkc.constraint_object_id = fk.object_id
+                INNER JOIN sys.tables tab1
+                ON tab1.object_id = fkc.parent_object_id
+                INNER JOIN sys.columns col1
+                ON col1.column_id = fkc.parent_column_id AND col1.object_id = tab1.object_id
+                INNER JOIN sys.tables tab2
+                ON tab2.object_id = fkc.referenced_object_id
+                INNER JOIN sys.columns col2
+                ON col2.column_id = fkc.referenced_column_id AND col2.object_id = tab2.object_id
+            WHERE fk.is_disabled = 0
+              AND CONCAT(QUOTENAME(schema_name (tab1.schema_id))
+                , '.'
+                , QUOTENAME(tab1.name)) IN ('[dbo].[_TransactionIndex_31adb587-a9ae-4f15-839b-1bb9ac305049]','[dbo].[EmployeeHoliday]','[dbo].[EmployeeSalary]','[dbo].[pivottable]','[DIM].[CANCELLATION_CODE]','[DIM].[CARRIERS]','[DIM].[DATE]','[DIM].[EMPLOYEES]','[DIM].[LOCATION]','[DIM].[plane]','[STA].[AIRPORTS]','[STA].[CARRIERS]','[STA].[FLIGHTDATA]','[STA].[PLANEDATA]','[TMP].[AIRPORTS]','[TMP].[CARRIERS]','[TMP].[FLIGHTDATA]','[TMP].[LOADINGFAILURES]','[TMP].[PLANEDATA]')]]></value>
+    </action>
+    <action name="database_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[PlanesDWHCP]]></value>
+    </action>
+    <action name="client_hostname" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[MN00000D]]></value>
+    </action>
+    <action name="client_app_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[Azure SQL Query Editor]]></value>
+    </action>
+  </event>
+</RingBufferTarget>

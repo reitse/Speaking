@@ -1,0 +1,147 @@
+<RingBufferTarget truncated="0" processingTime="0" totalEventsProcessed="3" eventCount="3" droppedCount="0" memoryUsed="2165">
+  <event name="sql_statement_starting" package="sqlserver" timestamp="2024-07-16T05:24:40.257Z">
+    <data name="state">
+      <type name="statement_starting_state" package="sqlserver"></type>
+      <value>0</value>
+      <text><![CDATA[Normal]]></text>
+    </data>
+    <data name="line_number">
+      <type name="int32" package="package0"></type>
+      <value>1</value>
+    </data>
+    <data name="offset">
+      <type name="int32" package="package0"></type>
+      <value>0</value>
+    </data>
+    <data name="offset_end">
+      <type name="int32" package="package0"></type>
+      <value>14</value>
+    </data>
+    <data name="statement">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[select 1]]></value>
+    </data>
+    <action name="username" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[User_Name]]></value>
+    </action>
+    <action name="sql_text" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[select 1]]></value>
+    </action>
+    <action name="database_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[PlanesDWHCP]]></value>
+    </action>
+    <action name="client_hostname" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[MN00000D]]></value>
+    </action>
+    <action name="client_app_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[Azure SQL Query Editor]]></value>
+    </action>
+  </event>
+  <event name="sql_statement_starting" package="sqlserver" timestamp="2024-07-16T05:24:43.759Z">
+    <data name="state">
+      <type name="statement_starting_state" package="sqlserver"></type>
+      <value>0</value>
+      <text><![CDATA[Normal]]></text>
+    </data>
+    <data name="line_number">
+      <type name="int32" package="package0"></type>
+      <value>1</value>
+    </data>
+    <data name="offset">
+      <type name="int32" package="package0"></type>
+      <value>0</value>
+    </data>
+    <data name="offset_end">
+      <type name="int32" package="package0"></type>
+      <value>296</value>
+    </data>
+    <data name="statement">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT CONCAT(QUOTENAME(TABLE_SCHEMA), '.', QUOTENAME(TABLE_NAME))
+            FROM INFORMATION_SCHEMA.TABLES
+            WHERE TABLE_SCHEMA <> 'SYS']]></value>
+    </data>
+    <action name="username" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[User_Name]]></value>
+    </action>
+    <action name="sql_text" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT CONCAT(QUOTENAME(TABLE_SCHEMA), '.', QUOTENAME(TABLE_NAME))
+            FROM INFORMATION_SCHEMA.TABLES
+            WHERE TABLE_SCHEMA <> 'SYS']]></value>
+    </action>
+    <action name="database_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[PlanesDWHCP]]></value>
+    </action>
+    <action name="client_hostname" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[MN00000D]]></value>
+    </action>
+    <action name="client_app_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[Azure SQL Query Editor]]></value>
+    </action>
+  </event>
+  <event name="sql_statement_starting" package="sqlserver" timestamp="2024-07-16T05:24:43.995Z">
+    <data name="state">
+      <type name="statement_starting_state" package="sqlserver"></type>
+      <value>0</value>
+      <text><![CDATA[Normal]]></text>
+    </data>
+    <data name="line_number">
+      <type name="int32" package="package0"></type>
+      <value>1</value>
+    </data>
+    <data name="offset">
+      <type name="int32" package="package0"></type>
+      <value>0</value>
+    </data>
+    <data name="offset_end">
+      <type name="int32" package="package0"></type>
+      <value>378</value>
+    </data>
+    <data name="statement">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT
+            s.NAME AS SchemaName,
+            t.NAME AS TableName
+        FROM sys.tables t
+        INNER JOIN sys.schemas s
+        ON t.schema_id = s.schema_id
+        ORDER BY 1, 2]]></value>
+    </data>
+    <action name="username" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[User_Name]]></value>
+    </action>
+    <action name="sql_text" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[SELECT
+            s.NAME AS SchemaName,
+            t.NAME AS TableName
+        FROM sys.tables t
+        INNER JOIN sys.schemas s
+        ON t.schema_id = s.schema_id
+        ORDER BY 1, 2]]></value>
+    </action>
+    <action name="database_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[PlanesDWHCP]]></value>
+    </action>
+    <action name="client_hostname" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[MN00000D]]></value>
+    </action>
+    <action name="client_app_name" package="sqlserver">
+      <type name="unicode_string" package="package0"></type>
+      <value><![CDATA[Azure SQL Query Editor]]></value>
+    </action>
+  </event>
+</RingBufferTarget>
